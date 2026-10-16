@@ -1,0 +1,7 @@
+## Problem Statement – Gym Member Management Using Linked List
+Develop a Gym Member Management System using a Singly Linked List to perform the following operations:
+Insert Record – Add a new gym member with Member ID, Name, and Membership Type.
+Delete Record – Delete a gym member using their Member ID.
+Search Record – Search for a gym member using their Member ID and display their details.
+Display Records – Display all the gym members stored in the linked list.
+Exit – Terminate the program.
