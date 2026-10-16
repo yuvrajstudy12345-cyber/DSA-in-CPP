@@ -1,0 +1,20 @@
+## Algorithms
+A. Stack Algorithm
+Start and initialize top = -1.
+Push: Check if the stack is full. If not, insert the member at the top.
+Pop: Check if the stack is empty. If not, remove the top member.
+Display: Print all members from top to bottom.
+Repeat until the user exits.
+B. Queue Algorithm
+Start and initialize front = 0 and rear = -1.
+Enqueue: Check if the queue is full. If not, insert the member at the rear.
+Dequeue: Check if the queue is empty. If not, remove the front member.
+Display: Print all members from front to rear.
+Repeat until the user exits.
+C. Main Algorithm
+Start the program.
+Display the main menu: Stack, Queue, and Exit.
+If Stack is selected, display its operations and perform the chosen operation.
+If Queue is selected, display its operations and perform the chosen operation.
+Repeat the menu until Exit is selected.
+Stop the program.
