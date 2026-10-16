@@ -1,0 +1,8 @@
+## Problem Statement – Gym Member Management Using Stack and Queue
+
+Develop a Gym Member Management System using Stack and Queue to perform the following operations:
+Insert Record: Add a new gym member's ID, name, and membership type to the stack or queue.
+Delete Record: Remove the most recently added member from the stack or the first added member from the queue.
+Display Stack: Display all gym members stored in the stack.
+Display Queue: Display all gym members stored in the queue.
+Exit: Terminate the program.
