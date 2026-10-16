@@ -1,0 +1,10 @@
+## Algorithm – Gym Member Management
+
+Start the program and initialize Head = NULL.
+Display the menu of operations.
+Insert: Create a new node and add the member record to the list.
+Delete: Search by Member ID and delete the matching node.
+Search: Find the member using Member ID and display the record.
+Display: Traverse the list and display all member records.
+Repeat the menu until Exit is selected.
+Stop the program.
