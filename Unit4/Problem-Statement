@@ -1,0 +1,14 @@
+Problem Statement
+
+Develop a C++ program to represent a family hierarchy using a tree data structure. The program should store family members as nodes, with relationships between parents and children represented by connections between the nodes.
+
+The system should allow the user to specify a family member and display their ancestors and descendants within the family tree. Ancestors include parents, grandparents, and earlier generations, while descendants include children, grandchildren, and later generations.
+
+The program should provide the following operations:
+
+1. Insert Record: Add a family member to the family hierarchy and establish their relationship with a parent.
+2. Search Record: Search for a specific family member by name in the tree.
+3. Display Family Tree: Display the family hierarchy, showing the relationships between family members.
+4. Display Ancestors: Display the ancestors of a specified family member, including their parents, grandparents, and earlier generations.
+5. Display Descendants: Display the descendants of a specified family member, including their children, grandchildren, and later generations.
+6. Exit: Terminate the program after completing the required operations.
