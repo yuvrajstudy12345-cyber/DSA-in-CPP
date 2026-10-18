@@ -1,0 +1,14 @@
+Problem Statement :-
+
+Develop a C++ program to represent and manage a family hierarchy using a General Tree data structure. Each node represents a family member, and its child nodes represent the next generation of the family.
+
+The program should allow users to add family members under their respective parents and perform the following operations:
+
+1. Insert Family Member: Add a new member to the family tree by specifying their name and parent's name.
+2. Search Member and Display Ancestors: Search for a particular family member and display their ancestors, including parents, grandparents, and earlier generations.
+3. Display Descendants: Display all descendants of a selected member, including children, grandchildren, and subsequent generations.
+4. Count Members at Each Generation: Calculate and display the number of family members at each level of the tree, starting from Level 0 for the root member.
+5. Display Family Hierarchy: Display the complete family tree in a structured, hierarchical format.
+6. Exit: Terminate the program after completing the required operations.
+
+The program aims to demonstrate how tree data structures can represent hierarchical family relationships and support searching, recursive traversal, ancestor and descendant identification, and generation-wise counting.
