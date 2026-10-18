@@ -1,0 +1,8 @@
+Objectives
+To understand the concept and implementation of a tree data structure in C++.
+To represent family relationships using a hierarchical tree structure.
+To insert and search for family members in the tree.
+To display the complete family hierarchy.
+To identify and display the ancestors of a specified family member.
+To identify and display the descendants of a specified family member.
+To understand tree traversal and its practical applications.
