@@ -1,0 +1,9 @@
+Objectives :-
+
+1. To implement a General Tree data structure using C++.
+2. To represent family relationships through parent-child connections.
+3. To search for a family member and identify their ancestors.
+4. To display all descendants of a selected family member.
+5. To count family members at each generation level using level-order traversal.
+6. To understand recursion and Breadth-First Search (BFS) in tree operations.
+7. To develop a menu-driven application for managing a family hierarchy.
