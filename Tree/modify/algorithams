@@ -1,0 +1,40 @@
+Algorithm :- 
+
+Step 1: Start the program and initialize an empty family tree.
+
+Step 2: Display the menu with options to insert a member, search and display ancestors, display descendants, count members at each generation, display the complete tree, and exit.
+
+Step 3: Accept the user's choice.
+
+Step 4: If the choice is Insert Member:
+
+- Accept the member's name.
+- If the tree is empty, create the root node.
+- Otherwise, search for the specified parent and add the new member as their child.
+- Reject duplicate member names.
+
+Step 5: If the choice is Search Member and Display Ancestors:
+
+- Accept the member's name.
+- Search the tree for the member.
+- If found, display their ancestors from the nearest ancestor to the oldest.
+- Otherwise, display a message indicating that the member was not found.
+
+Step 6: If the choice is Display Descendants:
+
+- Accept the selected member's name.
+- Search for the member in the tree.
+- If found, recursively display all children and subsequent generations.
+
+Step 7: If the choice is Count Members at Each Generation:
+
+- Insert the root node into a queue.
+- Process the queue level by level.
+- Count the nodes at each level and add their children to the queue.
+- Display the number of members at every generation level.
+
+Step 8: If the choice is Display Family Tree, traverse the tree and display all members in hierarchical order.
+
+Step 9: If the choice is Exit, terminate the program. Otherwise, return to the main menu.
+
+Step 10: Release the dynamically allocated memory and stop the program.
