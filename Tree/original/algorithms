@@ -1,0 +1,54 @@
+Algorithm: Family Hierarchy Tree
+
+1. Start.
+
+2. Initialize an empty family tree using a tree data structure.
+
+3. Display the menu containing the following operations:
+   
+   - Insert a family member.
+   - Search for a family member.
+   - Display the complete family tree.
+   - Display ancestors of a family member.
+   - Display descendants of a family member.
+   - Exit.
+
+4. Accept the user's choice.
+
+5. If the user selects Insert Member:
+   
+   - Enter the name of the new family member.
+   - If the tree is empty, make the member the root node.
+   - Otherwise, search for the specified parent and add the new member as their child.
+   - Display a success message if the insertion is completed.
+
+6. If the user selects Search Member:
+   
+   - Enter the name of the member to be searched.
+   - Traverse the tree and compare the names of its nodes.
+   - Display whether the member is found or not found.
+
+7. If the user selects Display Family Tree:
+   
+   - Check whether the tree is empty.
+   - If it is not empty, start from the root and display each member along with their children.
+
+8. If the user selects Display Ancestors:
+   
+   - Enter the name of the family member.
+   - Search for the specified member in the tree.
+   - Display their parent, grandparent, and other ancestors, if found.
+
+9. If the user selects Display Descendants:
+   
+   - Enter the name of the family member.
+   - Search for the specified member in the tree.
+   - Display their children, grandchildren, and subsequent generations, if found.
+
+10. If the user selects Exit, terminate the program.
+
+11. If an invalid choice is entered, display an error message.
+
+12. Repeat Steps 3–11 until the user selects Exit.
+
+13. Stop.
