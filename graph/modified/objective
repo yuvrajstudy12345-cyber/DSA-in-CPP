@@ -1,0 +1,8 @@
+Objectives 
+
+1. To represent a sensor network using a weighted undirected graph.
+2. To implement Prim’s algorithm to find a minimum spanning tree.
+3. To display each selected communication link with its weight and running total cost.
+4. To allow the user to update the weight of an existing edge and run Prim’s algorithm again.
+5. To detect disconnected graphs and determine whether a spanning tree can be formed.
+6. To understand the practical application of minimum spanning trees in sensor networks.
