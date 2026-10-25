@@ -1,0 +1,13 @@
+Algorithm 
+
+1. Start the program.
+2. Input the number of sensors and communication links, and create a weighted adjacency matrix.
+3. Display a menu to apply Prim’s algorithm, update an edge weight, or exit.
+4. Initialize the required arrays and select sensor 0 as the starting sensor.
+5. Find the minimum-weight edge connecting a visited sensor to an unvisited sensor.
+6. Select the edge, mark the sensor as visited, and display the edge weight and running total cost.
+7. Repeat until no more reachable sensors remain.
+8. Display the total cost and check whether a spanning tree can be formed.
+9. If the user updates an existing edge weight, update the matrix and run Prim’s algorithm again.
+10. Repeat the menu until Exit is selected.
+11. Stop the program.
