@@ -1,0 +1,174 @@
+#include <iostream>
+#include <vector>
+#include <climits>
+using namespace std;
+
+// Function to apply Prim's Algorithm
+void primsAlgorithm(vector<vector<int>>& graph, int n) {
+    vector<int> key(n, INT_MAX);
+    vector<int> parent(n, -1);
+    vector<bool> visited(n, false);
+
+    int totalCost = 0;
+    int connected = 0;
+
+    key[0] = 0;
+
+    cout << "\n--- Prim's Algorithm ---\n";
+    cout << "Selected Edges:\n";
+    cout << "Edge\tWeight\tRunning Total\n";
+
+    for (int count = 0; count < n; count++) {
+        int u = -1;
+        int minWeight = INT_MAX;
+
+        // Find the minimum-weight unvisited sensor
+        for (int i = 0; i < n; i++) {
+            if (!visited[i] && key[i] < minWeight) {
+                minWeight = key[i];
+                u = i;
+            }
+        }
+
+        // No more reachable sensors
+        if (u == -1)
+            break;
+
+        visited[u] = true;
+        connected++;
+
+        if (parent[u] != -1) {
+            totalCost += graph[parent[u]][u];
+
+            cout << parent[u] << " -- " << u << "\t"
+                 << graph[parent[u]][u] << "\t"
+                 << totalCost << "\n";
+        }
+
+        // Update weights of adjacent unvisited sensors
+        for (int v = 0; v < n; v++) {
+            if (graph[u][v] > 0 && !visited[v] &&
+                graph[u][v] < key[v]) {
+                key[v] = graph[u][v];
+                parent[v] = u;
+            }
+        }
+    }
+
+    cout << "\nTotal Cost = " << totalCost << "\n";
+
+    // Check whether a spanning tree can be formed
+    if (connected == n) {
+        cout << "All sensors are connected.\n";
+        cout << "A spanning tree can be formed.\n";
+    } else {
+        cout << "Graph is disconnected.\n";
+        cout << "A spanning tree cannot be formed.\n";
+        cout << "Sensors not connected to sensor 0: ";
+
+        for (int i = 0; i < n; i++) {
+            if (!visited[i])
+                cout << i << " ";
+        }
+
+        cout << "\n";
+    }
+}
+
+int main() {
+    int n, e;
+
+    cout << "Enter number of sensors: ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Invalid number of sensors.\n";
+        return 0;
+    }
+
+    cout << "Enter number of communication links: ";
+    cin >> e;
+
+    if (e < 0) {
+        cout << "Invalid number of links.\n";
+        return 0;
+    }
+
+    vector<vector<int>> graph(
+        n, vector<int>(n, 0)
+    );
+
+    cout << "Enter each link as: sensor1 sensor2 weight\n";
+    cout << "Sensor numbers: 0 to " << n - 1 << "\n";
+
+    for (int i = 0; i < e; i++) {
+        int u, v, w;
+        cin >> u >> v >> w;
+
+        if (u < 0 || u >= n || v < 0 || v >= n ||
+            u == v || w <= 0) {
+            cout << "Invalid link or weight.\n";
+            return 0;
+        }
+
+        graph[u][v] = w;
+        graph[v][u] = w;
+    }
+
+    int choice;
+
+    do {
+        cout << "\n===== SENSOR NETWORK MENU =====\n";
+        cout << "1. Apply Prim's Algorithm\n";
+        cout << "2. Update Edge Weight and Run Again\n";
+        cout << "3. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice) {
+        case 1:
+            primsAlgorithm(graph, n);
+            break;
+
+        case 2: {
+            int u, v, newWeight;
+
+            cout << "Enter sensors of the existing edge: ";
+            cin >> u >> v;
+
+            if (u < 0 || u >= n || v < 0 || v >= n ||
+                u == v || graph[u][v] == 0) {
+                cout << "Edge does not exist. Update cancelled.\n";
+                break;
+            }
+
+            cout << "Enter new weight: ";
+            cin >> newWeight;
+
+            if (newWeight <= 0) {
+                cout << "Weight must be positive. Update cancelled.\n";
+                break;
+            }
+
+            graph[u][v] = newWeight;
+            graph[v][u] = newWeight;
+
+            cout << "Edge weight updated successfully.\n";
+            cout << "Running Prim's Algorithm again...\n";
+
+            primsAlgorithm(graph, n);
+            break;
+        }
+
+        case 3:
+            cout << "Program ended.\n";
+            break;
+
+        default:
+            cout << "Invalid choice. Try again.\n";
+        }
+
+    } while (choice != 3);
+
+    return 0;
+}
