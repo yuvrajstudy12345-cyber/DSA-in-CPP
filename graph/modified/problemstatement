@@ -1,0 +1,4 @@
+Problem statement 
+
+Sensor Network Using Prim’s Algorithm-
+Develop a C++ program to represent sensors as vertices and communication links as weighted edges in an undirected graph. Apply Prim’s algorithm to construct a minimum spanning tree (MST) and display each selected edge along with its weight and running total cost. The program should also allow the user to update the weight of an existing edge and reapply Prim’s algorithm. Additionally, detect whether the graph is disconnected and report whether a spanning tree can be formed.
