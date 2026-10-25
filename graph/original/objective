@@ -1,0 +1,9 @@
+Objectives
+
+1. To represent a sensor network using a weighted graph.
+2. To understand vertices, edges, and edge weights.
+3. To implement Prim’s algorithm in C++.
+4. To construct a Minimum Spanning Tree with minimum total communication cost.
+5. To display the selected communication links and their weights.
+6. To calculate the total cost of the Minimum Spanning Tree.
+7. To identify disconnected sensors when the graph is not fully connected.
