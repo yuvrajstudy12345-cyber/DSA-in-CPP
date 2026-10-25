@@ -1,0 +1,23 @@
+Algorithm 
+
+Step 1: Start the program.
+
+Step 2: Input the number of sensors and communication links.
+
+Step 3: Represent each sensor as a vertex and each communication link as a weighted, undirected edge.
+
+Step 4: Initialize all sensors as unvisited and set the total cost to zero.
+
+Step 5: Select a starting sensor and mark it as visited.
+
+Step 6: Find the minimum-weight edge connecting a visited sensor to an unvisited sensor.
+
+Step 7: If such an edge exists, select it, display the communication link and its weight, add the weight to the total cost, and mark the new sensor as visited.
+
+Step 8: Repeat Steps 6 and 7 until no eligible edge remains.
+
+Step 9: Display the selected links and the total communication cost of the resulting spanning tree or forest.
+
+Step 10: Identify and display any sensors that remain unconnected to the starting sensor.
+
+Step 11: Stop the program.
