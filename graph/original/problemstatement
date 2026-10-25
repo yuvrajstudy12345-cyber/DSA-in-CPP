@@ -1,1 +1,3 @@
-pp
+Problem Statement -
+
+Develop a C++ program to represent sensors as vertices and communication links as weighted edges. Apply Prim's algorithm to construct a minimum spanning tree. Display selected links and total cost, and identify any sensors left unconnected if the graph is disconnected.
