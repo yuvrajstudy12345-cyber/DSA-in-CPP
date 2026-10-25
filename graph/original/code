@@ -1,0 +1,116 @@
+#include <iostream>
+#include <vector>
+#include <climits>
+using namespace std;
+
+int main() {
+    int n, e;
+
+    cout << "Enter number of sensors: ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "Number of sensors must be positive.\n";
+        return 0;
+    }
+
+    cout << "Enter number of communication links: ";
+    cin >> e;
+
+    if (e < 0) {
+        cout << "Number of links cannot be negative.\n";
+        return 0;
+    }
+
+    vector<vector<int>> graph(
+        n, vector<int>(n, 0)
+    );
+
+    cout << "\nEnter links as: sensor1 sensor2 cost\n";
+    cout << "Sensor numbers must be from 0 to " << n - 1 << ".\n";
+
+    for (int i = 0; i < e; i++) {
+        int u, v, w;
+        cin >> u >> v >> w;
+
+        if (u < 0 || u >= n || v < 0 || v >= n ||
+            u == v || w <= 0) {
+            cout << "Invalid link. Enter valid sensors "
+                 << "and a positive cost.\n";
+            return 0;
+        }
+
+        graph[u][v] = w;
+        graph[v][u] = w;
+    }
+
+    vector<int> key(n, INT_MAX);
+    vector<int> parent(n, -1);
+    vector<bool> visited(n, false);
+
+    int totalCost = 0;
+    int connected = 0;
+
+    // Start Prim's algorithm from sensor 0
+    key[0] = 0;
+
+    cout << "\nSelected communication links:\n";
+
+    for (int count = 0; count < n; count++) {
+        int u = -1;
+        int minCost = INT_MAX;
+
+        // Find the minimum-cost unvisited sensor
+        for (int i = 0; i < n; i++) {
+            if (!visited[i] && key[i] < minCost) {
+                minCost = key[i];
+                u = i;
+            }
+        }
+
+        // No reachable unvisited sensor remains
+        if (u == -1)
+            break;
+
+        visited[u] = true;
+        connected++;
+
+        if (parent[u] != -1) {
+            cout << parent[u] << " -- " << u
+                 << " : Cost = " << graph[parent[u]][u]
+                 << "\n";
+
+            totalCost += graph[parent[u]][u];
+        }
+
+        // Update costs of adjacent unvisited sensors
+        for (int v = 0; v < n; v++) {
+            if (graph[u][v] > 0 && !visited[v] &&
+                graph[u][v] < key[v]) {
+                key[v] = graph[u][v];
+                parent[v] = u;
+            }
+        }
+    }
+
+    cout << "\nTotal cost of selected links: "
+         << totalCost << "\n";
+
+    if (connected == n) {
+        cout << "All sensors are connected.\n";
+    } else {
+        cout << "\nGraph is disconnected.\n";
+        cout << "Sensors not connected to sensor 0: ";
+
+        for (int i = 0; i < n; i++) {
+            if (!visited[i])
+                cout << i << " ";
+        }
+
+        cout << "\n";
+        cout << "The selected links form an MST "
+             << "for the component containing sensor 0.\n";
+    }
+
+    return 0;
+}
